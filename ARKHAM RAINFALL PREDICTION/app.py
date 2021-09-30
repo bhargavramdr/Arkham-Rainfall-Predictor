@@ -202,10 +202,10 @@ def predict():
         prediction = model.predict(Par)
 
         if prediction == float(0):
-            return render_template('index.html', prediction_texts="There won't be rain tomorrow")
+            return render_template('index.html', prediction_texts="There's a low chance of rain tomorrow")
             # return "Something is wrong"
         else:
-            return render_template('index.html', prediction_text="There's a high chance of rain tomorrow")
+            return render_template('index.html', prediction_texts="There's a high chance of rain tomorrow")
             # return "Something is wrong_1"
     else:
         # return "Something is not right"
