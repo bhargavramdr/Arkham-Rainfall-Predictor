@@ -9,3 +9,15 @@ The model had been trained by the Xgboost Classifier, which out performed other 
 We all want the best for the Arkham.
 **
 
+## Here's how to run it:
+You can run through Visual Studio or through Command Prompt
+
+1. run "pip install -r requirements.txt" in your shell"
+
+2. Then simply run the app.py. 
+
+
+Deployed site will look like this.
+
+![Screenshot (94)](https://user-images.githubusercontent.com/72303641/136688139-250512b0-13fa-41b8-9ea6-95b1dfd07979.png)
+
