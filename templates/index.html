@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon"
+        href="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/apple/285/cloud-with-rain_1f327-fe0f.png">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='../static/Style/style.css') }}">
+    <title>Arkham Rainfall</title>
+</head>
+
+<body>
+
+    <body background="static\rain-backgrounds.jpg">
+        <div style="color:rgb(190, 42, 42)">
+            <div class="container">
+                <form action="{{ url_for('predict')}}" method="post">
+                    <h1 class='title'>Arkham Rainfall Predictive analysis</h1>
+
+                    <h3>County</h3>
+                    <select name="Location" id="first" required="required">
+                        <option value="'Albury'">Albury</option>
+                        <option value="BadgerysCreek">BadgerysCreek</option>
+                        <option value="Cobar">Cobar</option>
+                        <option value="CoffsHarbour">CoffsHarbour</option>
+                        <option value="Moree">Moree</option>
+                        <option value="Newcastle">Newcastle</option>
+                        <option value="NorahHead">NorahHead</option>
+                        <option value="NorfolkIsland">NorfolkIsland</option>
+                        <option value="Penrith">Penrith</option>
+                        <option value="Richmond">Richmond</option>
+                        <option value="Wollongong">Wollongong</option>
+                        <option value="Canberra">Canberra</option>
+                        <option value="Tuggeranong">Tuggeranong</option>
+                        <option value="MountGinini">MountGinini</option>
+                        <option value="Ballarat">Ballarat</option>
+                        <option value="Bendigo">Bendigo</option>
+                        <option value="Nhil">Nhil</option>
+                        <option value="Portland">Portland</option>
+                        <option value="Watsonia">Watsonia</option>
+                    </select>
+                    <br>
+
+                    <h3>Minimum Temperature recorded so far today</h3>
+                    <input id="second" name="MinTemp" required="required"
+                        placeholder="Gerneral Range is from -5 to 30 degree celsius">
+                    <br>
+                    <h3>Maximum Temperature recorded so far today</h3>
+                    <input id="third" name="MaxTemp" required="required"
+                        placeholder="Gerneral Range is from 0 to 45 degree celsius">
+                    <br>
+
+
+
+                    <h3>Sunshine</h3>
+                    <input id="fourth" name="Sunshine" required="required" placeholder="Intensity from 0 to 15">
+                    <br>
+                    <h3>Wind Gust Direction</h3>
+                    <select name="WindGustDir" id="fifth" required="required">
+                        <option value="North">North</option>
+                        <option value="South">South</option>
+                        <option value="East">East</option>
+                        <option value="West">West</option>
+                        <option value="NE">NE</option>
+                        <option value="NW">NW</option>
+                        <option value="SE">SE</option>
+                        <option value="SW">SW</option>
+                        <option value="WNW">WNW</option>
+                        <option value="WSW">WSW</option>
+                        <option value="NNW">NNW</option>
+                        <option value="NNE">NNE</option>
+                        <option value="ENE">ENE</option>
+                        <option value="SSE">SSE</option>
+                        <option value="ESE">ESE</option>
+                        <option value="SSW">SSW</option>
+                    </select>
+                    <br>
+                    <h3>Wind Gust speed</h3>
+                    <input id="sixth" name="WindGustSpeed" required="required"
+                        placeholder="General Range is from 3 to 80 mph">
+                    <br>
+                    <h3>Wind Direction at 9 am</h3>
+                    <select name="WindDir9am" id="seventh" required="required">
+                        <option value="North">North</option>
+                        <option value="South">South</option>
+                        <option value="East">East</option>
+                        <option value="West">West</option>
+                        <option value="NE">NE</option>
+                        <option value="NW">NW</option>
+                        <option value="SE">SE</option>
+                        <option value="SW">SW</option>
+                        <option value="WNW">WNW</option>
+                        <option value="WSW">WSW</option>
+                        <option value="NNW">NNW</option>
+                        <option value="NNE">NNE</option>
+                        <option value="ENE">ENE</option>
+                        <option value="SSE">SSE</option>
+                        <option value="ESE">ESE</option>
+                        <option value="SSW">SSW</option>
+                    </select>
+                    <br>
+                    <h3>Wind Direction at 3 pm</h3>
+                    <select name="WindDir3pm" id="eigth" required="required">
+                        <option value="North">North</option>
+                        <option value="South">South</option>
+                        <option value="East">East</option>
+                        <option value="West">West</option>
+                        <option value="NE">NE</option>
+                        <option value="NW">NW</option>
+                        <option value="SE">SE</option>
+                        <option value="SW">SW</option>
+                        <option value="WNW">WNW</option>
+                        <option value="WSW">WSW</option>
+                        <option value="NNW">NNW</option>
+                        <option value="NNE">NNE</option>
+                        <option value="ENE">ENE</option>
+                        <option value="SSE">SSE</option>
+                        <option value="ESE">ESE</option>
+                        <option value="SSW">SSW</option>
+                    </select>
+                    <br>
+                    <h3>Wind Speed at 9 am</h3>
+                    <input id="ninth" name="WindSpeed9am" required="required"
+                        placeholder="General Range is from 3 to 40 mph">
+                    <br>
+                    <h3>Wind Speed at 3 pm</h3>
+                    <input id="tenth" name="WindSpeed3pm" required="required"
+                        placeholder="General Range is from 3 to 40 mph">
+                    <br>
+                    <h3>Humidity at 9 am</h3>
+                    <input id="eleventh" name="Humidity9am" required="required"
+                        placeholder="General Range is from 30 to 120">
+                    <br>
+                    <h3>Humidity at 3 pm</h3>
+                    <input id="twelth" name="Humidity3pm" required="required"
+                        placeholder="General Range is from 10 to 100">
+
+                    <br>
+                    <h3>Cloud at 3 pm</h3>
+                    <input id="Thirteenth" name="Cloud3pm" required="required" placeholder="Ranges from 0 to 10">
+                    <br>
+                    <h3>Temperature at 9 am</h3>
+                    <input id="fourteenth" name="Temp9am" required="required"
+                        placeholder="General range from 0 to 35 degree celsius">
+                    <br>
+                    <h3>Temperature at 3 pm</h3>
+                    <input id="fifteenth" name="Temp3pm" required="required"
+                        placeholder="General range from 0 to 40 degree celsius">
+                    <br>
+                    <button id="sub" type="submit ">Rain Tommorow</button>
+
+
+
+
+                </form>
+            </div>
+
+
+
+
+
+            <h3>{{prediction_texts}}<h3>
+        </div>
+        <footer>
+            <ul>
+                <li><a href="https://www.linkedin.com/in/bhargav-ram-d-r">Linkedin</a></li>
+            </ul>
+            <ul>
+                <li><a href="mailto: bhargavramdr@gmail.com">Gmail</a></li>
+            </ul>
+            <ul>
+                <li><a href="https://github.com/bhargavramdr">Github</a></li>
+            </ul>
+        </footer>
+
+        </style>
+
+    </body>
+
+</html>
