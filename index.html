@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arkham Rainfall</title>
+</head>
+
+<body>
+
+    <body background="/static/Rain_2.jpg">
+        <div style="color:rgb(190, 42, 42)">
+            <form action="{{ url_for('predict')}}" method="post">
+                <h1>Arkham Rainfall Predictive analysis</h1>
+
+                <h2>County</h>
+                    <select name="Location" id="first" required="required">
+                        <option value="'Albury'">Albury</option>
+                        <option value="BadgerysCreek">BadgerysCreek</option>
+                        <option value="Cobar">Cobar</option>
+                        <option value="CoffsHarbour">CoffsHarbour</option>
+                        <option value="Moree">Moree</option>
+                        <option value="Newcastle">Newcastle</option>
+                        <option value="NorahHead">NorahHead</option>
+                        <option value="NorfolkIsland">NorfolkIsland</option>
+                        <option value="Penrith">Penrith</option>
+                        <option value="Richmond">Richmond</option>
+                        <option value="Wollongong">Wollongong</option>
+                        <option value="Canberra">Canberra</option>
+                        <option value="Tuggeranong">Tuggeranong</option>
+                        <option value="MountGinini">MountGinini</option>
+                        <option value="Ballarat">Ballarat</option>
+                        <option value="Bendigo">Bendigo</option>
+                        <option value="Nhil">Nhil</option>
+                        <option value="Portland">Portland</option>
+                        <option value="Watsonia">Watsonia</option>
+                    </select>
+
+
+                    <h3>Minimum Temperature recorded so far today</h3><input id="second" name="MinTemp"
+                        required="required" placeholder="Gerneral Range is from -5 to 30 degree celsius">
+
+                    <h3>Maximum Temperature recorded so far today</h3><br><input id="third" name="MaxTemp"
+                        required="required" placeholder="Gerneral Range is from 0 to 45 degree celsius">
+
+
+
+
+                    <h3>Sunshine</h3><br><input id="fourth" name="Sunshine" required="required"
+                        placeholder="Intensity from 0 to 15">
+
+                    <h3>Wind Gust Direction</h3><br><select name="WindGustDir" id="fifth" required="required">
+                        <option value="North">North</option>
+                        <option value="South">South</option>
+                        <option value="East">East</option>
+                        <option value="West">West</option>
+                        <option value="NE">NE</option>
+                        <option value="NW">NW</option>
+                        <option value="SE">SE</option>
+                        <option value="SW">SW</option>
+                        <option value="WNW">WNW</option>
+                        <option value="WSW">WSW</option>
+                        <option value="NNW">NNW</option>
+                        <option value="NNE">NNE</option>
+                        <option value="ENE">ENE</option>
+                        <option value="SSE">SSE</option>
+                        <option value="ESE">ESE</option>
+                        <option value="SSW">SSW</option>
+                    </select>
+
+                    <h3>Wind Gust speed</h3><br><input id="sixth" name="WindGustSpeed" required="required"
+                        placeholder="General Range is from 3 to 80 mph">
+
+                    <h3>Wind Direction at 9 am</h3><br><select name="WindDir9am" id="seventh" required="required">
+                        <option value="North">North</option>
+                        <option value="South">South</option>
+                        <option value="East">East</option>
+                        <option value="West">West</option>
+                        <option value="NE">NE</option>
+                        <option value="NW">NW</option>
+                        <option value="SE">SE</option>
+                        <option value="SW">SW</option>
+                        <option value="WNW">WNW</option>
+                        <option value="WSW">WSW</option>
+                        <option value="NNW">NNW</option>
+                        <option value="NNE">NNE</option>
+                        <option value="ENE">ENE</option>
+                        <option value="SSE">SSE</option>
+                        <option value="ESE">ESE</option>
+                        <option value="SSW">SSW</option>
+                    </select>
+
+                    <h3>Wind Direction at 3 pm</h3><br><select name="WindDir3pm" id="eigth" required="required">
+                        <option value="North">North</option>
+                        <option value="South">South</option>
+                        <option value="East">East</option>
+                        <option value="West">West</option>
+                        <option value="NE">NE</option>
+                        <option value="NW">NW</option>
+                        <option value="SE">SE</option>
+                        <option value="SW">SW</option>
+                        <option value="WNW">WNW</option>
+                        <option value="WSW">WSW</option>
+                        <option value="NNW">NNW</option>
+                        <option value="NNE">NNE</option>
+                        <option value="ENE">ENE</option>
+                        <option value="SSE">SSE</option>
+                        <option value="ESE">ESE</option>
+                        <option value="SSW">SSW</option>
+                    </select>
+
+                    <h3>Wind Speed at 9 am</h3><br><input id="ninth" name="WindSpeed9am" required="required"
+                        placeholder="General Range is from 3 to 40 mph">
+
+                    <h3>Wind Speed at 3 pm</h3><br><input id="tenth" name="WindSpeed3pm" required="required"
+                        placeholder="General Range is from 3 to 40 mph">
+
+                    <h3>Humidity at 9 am</h3><br><input id="eleventh" name="Humidity9am" required="required"
+                        placeholder="General Range is from 30 to 120">
+
+                    <h3>Humidity at 3 pm</h3><br><input id="twelth" name="Humidity3pm" required="required"
+                        placeholder="General Range is from 10 to 100">
+
+
+                    <h3>Cloud at 3 pm</h3><br><input id="Thirteenth" name="Cloud3pm" required="required"
+                        placeholder="Ranges from 0 to 10">
+
+                    <h3>Temperature at 9 am</h3><br><input id="fourteenth" name="Temp9am" required="required"
+                        placeholder="General range from 0 to 35 degree celsius">
+
+                    <h3>Temperature at 3 pm</h3><br><input id="fifteenth" name="Temp3pm" required="required"
+                        placeholder="General range from 0 to 40 degree celsius">
+
+                    <br><br><button id="sub" type="submit ">Rain Tommorow</button>
+                    <br>
+
+
+
+            </form>
+
+
+
+            <br><br>
+            <h3>{{prediction_texts}}<h3>
+        </div>
+
+
+
+        <!-- 
+        <style>
+            body {
+                background-color: lightslategray;
+                text-align: center;
+                padding: 0px;
+            }
+
+            #research {
+                font-size: 18px;
+                width: 100px;
+                height: 23px;
+                top: 23px;
+            }
+
+            #box {
+                border-radius: 60px;
+                border-color: 45px;
+                border-style: solid;
+                font-family: cursive;
+                text-align: center;
+                background-color: rgb(168, 131, 61);
+                font-size: medium;
+                position: absolute;
+                width: 700px;
+                bottom: 9%;
+                height: 850px;
+                right: 30%;
+                padding: 0px;
+                margin: 0px;
+                font-size: 14px;
+            }
+
+            #fuel {
+                width: 83px;
+                height: 43px;
+                text-align: center;
+                border-radius: 14px;
+                font-size: 20px;
+            }
+
+            #fuel:hover {
+                background-color: coral;
+            }
+
+            #research {
+                width: 99px;
+                height: 43px;
+                text-align: center;
+                border-radius: 14px;
+                font-size: 18px;
+            }
+
+            #research:hover {
+                background-color: coral;
+            }
+
+            #resea {
+                width: 99px;
+                height: 43px;
+                text-align: center;
+                border-radius: 14px;
+                font-size: 18px;
+            }
+
+            #resea:hover {
+                background-color: coral;
+            }
+
+            #sub {
+                width: 120px;
+                height: 43px;
+                text-align: center;
+                border-radius: 14px;
+                font-size: 18px;
+            }
+
+            #sub:hover {
+                background-color: darkcyan;
+            }
+
+            #first {
+                border-radius: 14px;
+                height: 25px;
+                font-size: 20px;
+                text-align: center;
+            }
+
+            #second {
+                border-radius: 14px;
+                height: 25px;
+                font-size: 20px;
+                text-align: center;
+            }
+
+            #third {
+                border-radius: 14px;
+                height: 25px;
+                font-size: 20px;
+                text-align: center;
+            }
+
+            #fourth {
+                border-radius: 14px;
+                height: 25px;
+                font-size: 20px;
+                text-align: center;
+            }
+        </style> -->
+    </body>
+
+</html>
