@@ -56,5 +56,5 @@ You can run through Visual Studio or through Command Prompt
 ![image](https://user-images.githubusercontent.com/72303641/138697497-1a3837aa-9c5a-4b73-ab79-3993495707f1.png)
 ![image](https://user-images.githubusercontent.com/72303641/138697352-276e6250-2322-48d3-8058-23ae8b72f47f.png)
 
-**If we are considering the speed and accuracy than XGBoost is the best option.**
+**If we are considering the speed and accuracy than XGBoost is the best option. **
 
